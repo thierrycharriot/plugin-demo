@@ -173,6 +173,17 @@ class Plugin_Demo {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
+		// https://developer.wordpress.org/reference/functions/add_filter/
+		// add_filter( string $hook_name, callable $callback, int $priority = 10, int $accepted_args = 1 ): true
+		// Adds a callback function to a filter hook.
+		$this->loader->add_filter( 'theme_page_templates', $plugin_public, 'plugin_templates_register', 10, 3 );
+		$this->loader->add_filter( 'template_include', $plugin_public, 'plugin_templates_select', 99 );
+
+		// https://developer.wordpress.org/reference/functions/add_shortcode/
+		// add_shortcode( string $tag, callable $callback )
+		// Adds a new shortcode.
+		add_shortcode( 'shortcode-demo', array( $plugin_public, 'plugin_load_shortcode') ); 
+
 	}
 
 	/**

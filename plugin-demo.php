@@ -37,6 +37,15 @@ if ( ! defined( 'WPINC' ) ) {
  */
 define( 'PLUGIN_DEMO_VERSION', '1.0.0' );
 
+// https://developer.wordpress.org/reference/functions/plugin_dir_path/
+// plugin_dir_path( string $file )
+// Get the filesystem directory path (with trailing slash) for the plugin __FILE__ passed in.
+define( 'PLUGIN_DEMO_PATH', plugin_dir_path( __FILE__ ) );
+// https://developer.wordpress.org/reference/functions/plugin_dir_url/
+// plugin_dir_url( string $file )
+// Get the URL directory path (with trailing slash) for the plugin __FILE__ passed in.
+define( 'PLUGIN_DEMO_URL', plugin_dir_url( __FILE__ ) );
+
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-plugin-demo-activator.php
