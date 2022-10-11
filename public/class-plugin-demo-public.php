@@ -121,7 +121,7 @@ class Plugin_Demo_Public {
 		$page = basename( get_permalink() );
 		//var_dump( $page );
         if ( in_array( $page, $pages ) ) {
-            wp_enqueue_script( 'plugin-bootstrap-js', PLUGIN_DEMO_URL . 'assets/js/bootstrap.min.js', array(), $this->version, 'all' );
+            wp_enqueue_script( 'plugin-bootstrap-js', PLUGIN_DEMO_URL . 'assets/js/bootstrap.bundle.min.js', array(), $this->version, 'all' );
         }
 
 	}
