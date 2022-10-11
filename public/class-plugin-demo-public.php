@@ -85,7 +85,7 @@ class Plugin_Demo_Public {
 		$page = basename( get_permalink() );
 		//var_dump( $page );
         if ( in_array( $page, $pages ) ) {
-            wp_enqueue_style( 'plugin-bootstrap-css', PLUGIN_DEMO_URL . 'node_modules/bootstrap/dist/css/bootstrap.min.css', array(), $this->version, 'all' );
+            wp_enqueue_style( 'plugin-bootstrap-css', PLUGIN_DEMO_URL . 'assets/css/bootstrap.min.css', array(), $this->version, 'all' );
         }
 
 	}
@@ -121,7 +121,7 @@ class Plugin_Demo_Public {
 		$page = basename( get_permalink() );
 		//var_dump( $page );
         if ( in_array( $page, $pages ) ) {
-            wp_enqueue_script( 'plugin-bootstrap-js', PLUGIN_DEMO_URL . 'node_modules/bootstrap/dist/js/bootstrap.min.js', array(), $this->version, 'all' );
+            wp_enqueue_script( 'plugin-bootstrap-js', PLUGIN_DEMO_URL . 'assets/js/bootstrap.min.js', array(), $this->version, 'all' );
         }
 
 	}
