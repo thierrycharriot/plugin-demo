@@ -30,7 +30,19 @@ class Plugin_Demo_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
+		// https://developer.wordpress.org/reference/functions/wp_insert_post/
+		// wp_insert_post( array $postarr, bool $wp_error = false, bool $fire_after_hooks = true ): int|WP_Error
+		// Insert or update a post.
+		$create_page = array(
+			'post_author'	=> 1,
+			'post_title'    => 'Demo',
+			'post_status'   => 'publish',
+			'post_type'		=> 'page',
+			'post_name'    	=> 'demo'
+		);
 
+		// Insert or update a post
+		wp_insert_post( $create_page );
 	}
 
 }
